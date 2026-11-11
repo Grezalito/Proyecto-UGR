@@ -1,11 +1,16 @@
 /* ───────── Supermercado ───────── */
 
-export type CategoryId = "almacen" | "lacteos" | "bebidas" | "limpieza" | "panaderia";
+/** Slug de la categoría (p. ej. "almacen", "verduleria"). Las categorías viven en Turso. */
+export type CategoryId = string;
 
 export interface Category {
   id: CategoryId;
   name: string;
+  /** Nombre del ícono (ver src/lib/category-icons.ts). */
+  icon?: string;
 }
+
+export type NewCategory = { name: string; icon?: string };
 
 export interface Product {
   id: string;
